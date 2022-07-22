@@ -3,41 +3,73 @@
   <head>
     <title>Payment Form UI Design</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="confetti.css" />
   </head>
   <body>
-    <div class="payment">
-      <div class="bg"></div>
-      <p>Novo Nubank Silver</p>
-      <div class="card">
-        <img src="chip.png" class="chip" />
-        <div class="logo"></div>
-        <h2 class="bankName" contenteditable="true">Nubank</h2>
-        <form>
-          <div class="inputBox">
-            <span>Número do Cartão</span>
-            <input
-              type="text"
-              placeholder="0123 4567 8901 2345"
-              maxlength="19"
-            />
-          </div>
-          <div class="inputBox">
-            <span>Nome</span>
-            <input type="text" placeholder="Vitor Aurélio" />
-          </div>
-          <div class="group">
+    <section>
+      <div class="payment">
+        <div class="bg"></div>
+        <p>Novo Nubank Silver</p>
+        <div class="card">
+          <img src="chip.png" class="chip" />
+          <div class="logo"></div>
+          <h2 class="bankName" contenteditable="true">Nubank</h2>
+          <form>
             <div class="inputBox">
-              <span>Validade</span>
-              <input type="text" placeholder="01/28" maxlength="5" />
+              <span>Número do Cartão</span>
+              <input
+                type="text"
+                placeholder="0123 4567 8901 2345"
+                maxlength="19"
+              />
             </div>
             <div class="inputBox">
-              <span>COD</span>
-              <input type="password" placeholder="123" maxlength="4" />
+              <span>Nome</span>
+              <input type="text" placeholder="Vitor Aurélio" />
             </div>
-          </div>
-        </form>
+            <div class="group">
+              <div class="inputBox">
+                <span>Validade</span>
+                <input type="text" placeholder="01/28" maxlength="5" />
+              </div>
+              <div class="inputBox">
+                <span>COD</span>
+                <input type="password" placeholder="123" maxlength="4" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <button class="btn">Solicite já o seu !</button>
       </div>
-      <button class="btn">Solicite já o seu !</button>
-    </div>
+
+      <div class="popup">
+        <h2>Parabéns Nubanker ! ;)</h2>
+        <p class="close">x</p>
+      </div>
+      <canvas id="my-canvas"></canvas>
+      <script src="index.min.js"></script>
+      <script type="text/javascript">
+        var confettiSettings = {
+          target: "my-canvas",
+          size: 2,
+          clock: 50,
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        let btn = document.querySelector(".btn");
+        let close = document.querySelector(".close");
+        let canvasConfetti = document.querySelector("#my-canvas");
+        let popup = document.querySelector(".popup");
+        btn.onclick = function () {
+          canvasConfetti.classList.add("active");
+          popup.classList.add("active");
+        };
+        close.onclick = function () {
+          canvasConfetti.classList.remove("active");
+          popup.classList.remove("active");
+        };
+      </script>
+    </section>
   </body>
 </html>
