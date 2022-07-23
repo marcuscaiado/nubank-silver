@@ -1,5 +1,6 @@
 # nubank-silver
-Novo Nubank Silver
+CARD Checkout - With Animation
+NOVO Nubank Silver
 
 Estilizado em CSS
 
