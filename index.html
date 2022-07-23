@@ -9,37 +9,39 @@
     <section>
       <div class="payment">
         <div class="bg"></div>
-        <p>Novo Nubank Silver</p>
+        <p>CARD Checkout - With Animation</p>
+        <p>Coloque seus dados e clique em finalizar !</p>
         <div class="card">
           <img src="chip.png" class="chip" />
           <div class="logo"></div>
-          <h2 class="bankName" contenteditable="true">Nubank</h2>
+          <h2 class="bankName" contenteditable="true">Nubank Silver</h2>
           <form>
-            <div class="inputBox">
+            <div id="numero" class="inputBox">
               <span>Número do Cartão</span>
               <input
                 type="text"
-                placeholder="0123 4567 8901 2345"
+                placeholder="xxxx xxxx xxxx xxxx"
                 maxlength="19"
+                data-mask="0000 0000 0000 0000"
               />
             </div>
-            <div class="inputBox">
+            <div id="nome" class="inputBox">
               <span>Nome</span>
-              <input type="text" placeholder="Vitor Aurélio" />
+              <input type="text" placeholder="Seu Nome" />
             </div>
             <div class="group">
-              <div class="inputBox">
+              <div id="validade" class="inputBox">
                 <span>Validade</span>
-                <input type="text" placeholder="01/28" maxlength="5" />
+                <input type="text" placeholder="xx/xx" maxlength="5" />
               </div>
-              <div class="inputBox">
+              <div id="cod" class="inputBox">
                 <span>COD</span>
-                <input type="password" placeholder="123" maxlength="4" />
+                <input type="password" placeholder="xxx" maxlength="4" />
               </div>
             </div>
           </form>
         </div>
-        <button class="btn">Solicite já o seu !</button>
+        <button class="btn">Finalizar</button>
       </div>
 
       <div class="popup">
